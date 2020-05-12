@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" style=" height: 100%;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/material-dashboard.css">
+    <link rel="stylesheet" type="text/css" href="css/material.css">
+    
+    <link rel="stylesheet" type="text/css" href="css/material-icons.css" />
+    <title>Chat RTS</title>
+</head>
+
+<body class="">
+    <div class="wrapper">
+        <div class="sidebar sidebar-expanded d-none d-md-block" data-color="orange" data-background-color="white">
+            <div class="logo">
+                <a class="simple-text logo-normal">
+                    <div class="text-center">
+                        Online Users
+                    </div>
+                </a>
+            </div>
+            <div class="sidebar-wrapper">
+                <ul class="nav" id="online_users">
+                    <% arr.forEach(function(user) { %>
+                    <li class="nav-item" id=<%= user.id %>>
+                        <a class="nav-link"><i class="material-icons">person</i>
+                            <p id="<%= user.username %>_u"> <%= user.username %></p>
+                            <small id="<%= user.username %>_t"></small>
+                        </a>
+                    </li>
+                    <% }) %>
+
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " data-color="orange"
+                data-background-color="black">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input id="new_username" class="form-control mr-sm-2" type="search" placeholder="User name"
+                            aria-label="Change">
+                        <button class="btn btn-outline my-2 my-sm-0" type="submit" id="send_username">Change
+                            Username</button>
+                    </form>
+                </div>
+            </nav>
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="card">
+                        <div class="card card-plain">
+                            <div class="card-header card-header-primary">
+                                <h4 class="card-title mt-0"> Chat Room </h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <div class="input-group p-3">
+                                        <input type="text" class="form-control" id="inputMessage" placeholder="Message">
+                                        <span class="input-group-btn">
+                                            <button type="button" id="send_message"
+                                                class="btn btn-fab btn-round btn-success shadow-primary">
+                                                <i class="material-icons">send</i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div id="messages_box" style="height: 550px; overflow-y: scroll;overflow-x: hidden;">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/socket.io.js"></script>
+    <script src="js/core/jquery.min.js"></script>
+    <script src="js/core/popper.min.js"></script>
+    <script src="js/core/bootstrap-material-design.min.js"></script>
+    <script src="js/plugins/perfect-scrollbar.jquery.min.js"></script>
+    <script src="js/plugins/moment.min.js"></script>
+    <script src="js/plugins/sweetalert2.js"></script>
+    <script src="js/plugins/jquery.validate.min.js"></script>
+    <script src="js/plugins/jquery.bootstrap-wizard.js"></script>
+    <script src="js/plugins/bootstrap-selectpicker.js"></script>
+    <script src="js/plugins/bootstrap-tagsinput.js"></script>
+    <script src="js/plugins/jasny-bootstrap.min.js"></script>
+    <script src="js/plugins/fullcalendar.min.js"></script>
+    <script src="js/plugins/jquery-jvectormap.js"></script>
+    <script src="js/plugins/nouislider.min.js"></script>
+    <script src="js/plugins/arrive.min.js"></script>
+    <script src="js/plugins/bootstrap-notify.js"></script>
+    <script src="js/material-dashboard.js" type="text/javascript"></script>
+    <script src="js/chat.js"></script>
+
+</body>
+
+</html>
